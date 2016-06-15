@@ -25,10 +25,9 @@
     <orderEntry type="library" name="Maven: edu.stanford.nlp:stanford-corenlp:models:3.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-log4j12:1.7.21" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
-    <orderEntry type="library" name="Maven: nz.ac.waikato.cms.weka:weka-dev:3.7.13" level="project" />
-    <orderEntry type="library" name="Maven: nz.ac.waikato.cms.weka.thirdparty:java-cup-11b:2015.03.26" level="project" />
-    <orderEntry type="library" name="Maven: nz.ac.waikato.cms.weka.thirdparty:java-cup-11b-runtime:2015.03.26" level="project" />
-    <orderEntry type="library" name="Maven: org.pentaho.pentaho-commons:pentaho-package-manager:1.0.11" level="project" />
+    <orderEntry type="library" name="Maven: nz.ac.waikato.cms.weka:weka-dev:3.7.5" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.squirrel-sql.thirdparty-non-maven:java-cup:0.11a" level="project" />
+    <orderEntry type="library" name="Maven: org.pentaho.pentaho-commons:pentaho-package-manager:0.9.9" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-csv:1.2" level="project" />
   </component>
 </module>

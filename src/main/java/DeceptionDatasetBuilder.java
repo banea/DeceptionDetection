@@ -26,6 +26,16 @@ public class DeceptionDatasetBuilder {
 
     public static void main(String[] args) throws IOException,
             ClassNotFoundException{
+
+        String inputFilename = args[1];
+        String outputFilename = args[2];
+
+        File f = new File(inputFilename);
+        if (!f.exists() || f.isDirectory()){
+            System.out.println("Input file not found!");
+            System.exit(0);
+        }
+
         DeceptionDatasetBuilder myBuilder = new DeceptionDatasetBuilder();
 
         /** Initialize logger instance */
@@ -50,9 +60,8 @@ public class DeceptionDatasetBuilder {
         StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 
         //load the dataset
-        String datasetPath = "src/main/resources/dataset.csv";
-        logger.info("Loading dataset from " + datasetPath + "...");
-        Reader in = new FileReader(datasetPath);
+        logger.info("Loading dataset from " + inputFilename + "...");
+        Reader in = new FileReader(inputFilename);
         CSVParser parser = new CSVParser(in, CSVFormat.DEFAULT.withHeader());
         List<CSVRecord> records = parser.getRecords();
         logger.debug("Size "+ records.size());
@@ -88,10 +97,10 @@ public class DeceptionDatasetBuilder {
         logger.info("Done. Found " + instances.size() + " deception instances");
         List<DeceptionInstance> instancesPerUser = myBuilder.generateTwoInstancesPerUser(instances);
         logger.info("Done. Found " + instancesPerUser.size() + " user instances");
-        File arff = new File ("output/overall.arff");
+        File arff = new File (outputFilename);
         logger.info("Preparring to write to arff formatted file " + arff.toString() );
         myBuilder.printDataset(instancesPerUser, arff);
-        logger.info("Arff dataset generated.");
+        logger.info("Arff dataset generated and stored in: " + outputFilename);
     }
 
 
